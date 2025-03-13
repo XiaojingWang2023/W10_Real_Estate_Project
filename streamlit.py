@@ -93,7 +93,7 @@ if submitted:
 
     # Display result
     st.subheader("Predicted Property Price:")
-    st.write(f"The predicted price for this property is: ${predict_price[0]:,.2f}")
+    st.write(f"The predicted price for this property is: ${predict_price}")
     
 st.write(
     """We used a machine learning (Random Forest) model to predict the property price. The features used in this prediction are ranked by relative
