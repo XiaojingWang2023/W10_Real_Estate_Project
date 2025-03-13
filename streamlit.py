@@ -24,21 +24,18 @@ rf_pickle = open("models/RFmodel.pkl", "rb")
 rf_model = pickle.load(rf_pickle)
 rf_pickle.close()
 
-# Get current year
-current_year = datetime.now().year
-
 # Prepare the form to collect user inputs
 with st.form("user_inputs"):
     st.subheader("Property Details")
     
     # Year Sold
-    year_sold = st.number_input("Year Sold", min_value=1900, max_value=2025, value=current_year)
+    year_sold = st.number_input("Year Sold", min_value=1900, max_value=2025, value=2014)
     
     # Property Tax
-    property_tax = st.number_input("Property Tax", min_value=0, step=1000)
+    property_tax = st.number_input("Property Tax", min_value=0, step=100)
     
     # Insurance
-    insurance = st.number_input("Insurance", min_value=0, step=1000)
+    insurance = st.number_input("Insurance", min_value=0, step=100)
     
     # Number of Beds
     beds = st.number_input("Number of Beds", min_value=1, max_value=5)
@@ -50,7 +47,7 @@ with st.form("user_inputs"):
     sqft = st.number_input("Square Footage (sqft)", min_value=100, step=1)
     
     # Year Built
-    year_built = st.number_input("Year Built", min_value=1900, max_value=current_year)
+    year_built = st.number_input("Year Built", min_value=1900, max_value=2025)
     
     # Lot Size
     lot_size = st.number_input("Lot Size", min_value=100, step=1)
