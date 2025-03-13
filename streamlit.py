@@ -1,9 +1,7 @@
-import matplotlib.pyplot as plt
+
 import pickle
 import streamlit as st
-from src.models.predict_model import predict_price
-from datetime import datetime
-import pandas as pd
+from src.models.predict_model import predict_evaluate_model
 
 
 
