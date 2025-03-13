@@ -69,7 +69,7 @@ with st.form("user_inputs"):
     property_type_condo = st.selectbox("Is it a Condo", option = ["Yes", "No"])
     
     # Submit button
-    submitted = st.form_submit_button("Predict Property Price")
+    submitted = st.form_submit_button("Predict")
     
 
 # Handle the dummy variables to pass to the model
