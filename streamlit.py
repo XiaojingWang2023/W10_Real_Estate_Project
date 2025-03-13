@@ -2,8 +2,6 @@
 import pickle
 import streamlit as st
 
-
-
 # Set the page title and description
 st.title("Real Estate Price Prediction")
 st.write("""
@@ -101,7 +99,7 @@ st.write(
     """We used a machine learning (Random Forest) model to predict the property price. The features used in this prediction are ranked by relative
     importance below."""
 )
-st.image("decision_tree.png")
+st.image("decison_tree.png")
 
 
 
