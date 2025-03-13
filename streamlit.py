@@ -62,10 +62,10 @@ with st.form("user_inputs"):
     property_age = st.number_input("Property Age", min_value=0, step=1)
     
     # Property Type: Bungalow
-    property_type_bunglow = st.selectbox("Is it a Bungalow", option= ["Yes", "No"])
+    property_type_bunglow = st.selectbox("Is it a Bungalow", options = ["Yes", "No"])
     
     # Property Type: Condo
-    property_type_condo = st.selectbox("Is it a Condo", option = ["Yes", "No"])
+    property_type_condo = st.selectbox("Is it a Condo", options = ["Yes", "No"])
     
     # Submit button
     submitted = st.form_submit_button("Predict")
