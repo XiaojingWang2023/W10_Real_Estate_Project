@@ -14,6 +14,3 @@ def predict_evaluate_model(model, X_test, y_test):
 
     return test_mae
 
-
-
-
