@@ -96,10 +96,8 @@ if submitted:
     st.write(f"The predicted price for this property is: ${predicted_price}")
     
 st.write(
-    """We used a machine learning (Random Forest) model to predict the property price. The features used in this prediction are ranked by relative
-    importance below."""
+    """We used a machine learning (Random Forest) model to predict the property price. """
 )
-st.image("decison_tree.png")
 
 
 
