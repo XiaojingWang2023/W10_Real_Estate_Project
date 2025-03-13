@@ -1,7 +1,6 @@
 
 import pickle
 import streamlit as st
-from src.models.predict_model import predict_evaluate_model
 
 
 
