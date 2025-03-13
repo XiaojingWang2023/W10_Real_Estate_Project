@@ -14,32 +14,33 @@ from src.data.make_dataset import load_and_preprocess_data
 from src.visualization.visualize import plot_tree
 from src.features.build_features import create_dummy_vars
 from src.models.train_model import train_model
-from src.models.predict_model import evaluate_model
-from src.models.predict_model import predict_price
-from src.models.predict_model import load_model
-import numpy as np
+from src.models.predict_model import predict_evaluate_model
+import pickle
+
 
 if __name__ == "__main__":
+    
     # Load and preprocess the data
-    data_path = "data/raw/final.csv"
-    df = load_and_preprocess_data(data_path)
+    df = load_and_preprocess_data('data/raw/final.csv')
 
     # Create dummy variables and separate features and target
     X, y = create_dummy_vars(df)
 
     # Train the Random Forest regression model
-    rfmodel, X_test, y_test = train_model(X, y)
+    model, X_test, y_test = train_model(X, y)
     
-    
-    # Evaluate the model
-    mae = evaluate_model(rfmodel, X_test, y_test)
-    print(f"Mean Absolute Error: {mae}")
+    # Predict and Evaluate the model
+    test_mae = predict_evaluate_model(model, X_test, y_test)
+    print(f"Test Mean Absolute Error: {test_mae}")
 
     # Plot visualizations
-    tree_image_path = plot_tree(rfmodel, X.columns.tolist())
+    plot_tree(model.estimators_[0], feature_names=X.columns)
     
+    # load the pickled model and make a new prediction
+    with open('models/RFmodel.pkl', 'rb') as f:
+        RE_Model = pickle.load(f)
+        
     # Use the loaded pickled model to make predictions
-    sample_input = np.array([2012, 216, 74, 1, 1, 618, 2000, 600, 1, 0, 0, 6, 0, 0])
-    model = load_model('models/RFmodel.pkl')
-    prediction = predict_price(model, sample_input)
-    print(f"Predicted Price for Sample Input: {prediction}")
+    prediction = RE_Model.predict([[2012, 216, 74, 1 , 1, 618, 2000, 600, 1, 0, 0, 6, 0, 0]])
+    print(f"Prediction for the input data: {prediction}")
+  

@@ -29,49 +29,48 @@ with st.form("user_inputs"):
     st.subheader("Property Details")
     
     # Year Sold
-    year_sold = st.number_input("Year Sold", min_value=1900, max_value=2050)
+    year_sold = st.number_input("Year Sold", min_value=2000, max_value=20502025, value=2012)
     
     # Property Tax
-    property_tax = st.number_input("Property Tax", min_value=0, value=234)
+    property_tax = st.number_input("Property Tax", min_value=0, value=216)
     
     # Insurance
-    insurance = st.number_input("Insurance", min_value=0, value=81)
+    insurance = st.number_input("Insurance", min_value=0, value=74)
     
     # Number of Beds
-    beds = st.number_input("Number of Beds", min_value=1, value=1)
+    beds = st.number_input("Number of Beds", min_value=1, max_value=10, value=1)
     
     # Number of Baths
-    baths = st.number_input("Number of Baths", min_value=1, value=1)
+    baths = st.number_input("Number of Baths", min_value=1, max_value=10, value=1)
     
     # Square Footage (sqft)
-    sqft = st.number_input("Square Footage (sqft)", min_value=1, value=600)
+    sqft = st.number_input("Square Footage (sqft)", min_value=100, value=618)
     
     # Year Built
-    year_built = st.number_input("Year Built", min_value=1900, max_value=2050)
+    year_built = st.number_input("Year Built", min_value=1900, max_value=2025, value=2000)
     
     # Lot Size
-    lot_size = st.number_input("Lot Size", min_value=0, value=0)
+    lot_size = st.number_input("Lot Size", min_value=100, value=600)
     
     # Basement Present
-    basement = st.checkbox("Basement Present", value=False)
+    basement = st.selectbox("Have Basement", [0, 1])
     
     # Popular Area
-    popular = st.checkbox("Popular Area", value=False)
+    popular = st.selectbox("Is Popular Area", [0, 1])
     
     # During Recession
-    recession = st.checkbox("During Recession", value=False)
+    recession = st.selectbox("During Recession", [0, 1])
     
     # Property Age
-    property_age = st.number_input("Property Age", min_value=0, value=10)
+    property_age = st.number_input("Property Age", min_value=0, value=6)
     
-    # Property Type Bunglow
-    property_type_Bunglow = st.checkbox("Bungalow Type", value=False)
-    
-    # Property Type Condo
-    property_type_Condo = st.checkbox("Condo Type", value=False)
+    # Property Type
+    property_type = st.selectbox("Property Type", ["Bunglow", "Condo"])
+    property_type_Bunglow = 1 if property_type == "Bunglow" else 0
+    property_type_Condo = 1 if property_type == "Condo" else 0
     
     # Submit button
-    submitted = st.form_submit_button("Predict Price")# year sold input
+    submitted = st.form_submit_button("Predict Price")
     
 
 # Handle the dummy variables to pass to the model
@@ -100,7 +99,7 @@ if submitted:
 
     # Display result
     st.subheader("Prediction Result:")
-    st.write(f"The predicted price for the given property is: **${predict_price():.2f}**")
+    st.write(f"The predicted price for the given property is: **${predict_price:.2f}**")
 
 
 
