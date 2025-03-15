@@ -17,7 +17,7 @@ def plot_tree(model, feature_names):
     plt.figure(figsize=(20, 10))
     tree.plot_tree(model, feature_names=feature_names, filled=True)
     plt.title("Decision Tree Visualization")
-    plt.savefig("decison_tree.png", dpi=300)
+    plt.savefig("decision_tree.png", dpi=300)
     plt.close()
     
 
