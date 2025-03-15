@@ -98,6 +98,7 @@ if submitted:
 st.write(
     """We used a machine learning (Random Forest) model to predict the property price. """
 )
+st.image("decision_tree.png")
 
 
 
