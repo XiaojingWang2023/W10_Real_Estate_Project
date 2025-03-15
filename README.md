@@ -28,9 +28,10 @@ The application is trained on the **final.csv dataset**. It includes features li
 - Year Built
 - Lot Size
 - Basement
+- popular
+- recession
 - Property Age
 - Property Type
-- And other attributes
 
 ## Technologies Used
 
@@ -41,7 +42,7 @@ The application is trained on the **final.csv dataset**. It includes features li
 
 ## Model
 
-The predictive model is trained using the final.csv dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The classification model used may include algorithms such as Logistic Regression, Random Forest, or XGBoost.
+The predictive model is trained using the final.csv dataset. It applies preprocessing steps like encoding categorical variables and scaling numerical features. The model used may include algorithms such as Logistic Regression, Random Forest, or XGBoost.
 
 ## Future Enhancements
 
