@@ -1,8 +1,8 @@
-# credit_eligibility_application
+# Real_Estate_application
 
 This app has been built using Streamlit and deployed with Streamlit community cloud
 
-[Visit the app here](https://loan-application-app.streamlit.app/)
+[Visit the app here](https://w10realestateproject-ie4ctutrjjvhkl4yhhfvs8.streamlit.app/)
 
 password - streamlit
 
