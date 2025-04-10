@@ -10,9 +10,7 @@ def train_model(X, y):
 
     
     # Train the Random Forest regression model
-    model = RandomForestRegressor(n_estimators=200,
-                                   max_depth=10,
-                                   max_features=5).fit(X_train, y_train)
+    model = RandomForestRegressor(n_estimators=200, criterion='absolute_error').fit(X_train, y_train)
 
     
     
